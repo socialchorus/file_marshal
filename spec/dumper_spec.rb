@@ -1,14 +1,11 @@
 require "spec_helper"
 
 describe FileMarshal::Dumper do
-  # Setting the mtime : http://stackoverflow.com/questions/8425689/how-can-i-set-a-file-creation-time-with-ruby-on-mac-os
-  # mtime is modified time, ctime is changed at time; mtime is what we want.  
-
   let(:file) { File.open(File.dirname(__FILE__) + '/support/commodore.jpg') }
-  let(:loader) { FileMarshal::Dumper.new(file) }
+  let(:dumper) { FileMarshal::Dumper.new(file) }
 
   describe "#to_hash" do
-    let(:attributes) { loader.to_hash }
+    let(:attributes) { dumper.to_hash }
 
     it "gets the file name" do
       attributes[:name].should == "commodore.jpg"
