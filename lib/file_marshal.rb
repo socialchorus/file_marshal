@@ -1,4 +1,5 @@
 require 'tempfile'
+require 'json'
 
 require 'active_support/core_ext/module/delegation'
 
@@ -9,3 +10,4 @@ require "file_marshal/file_attributes"
 require "file_marshal/writer"
 require "file_marshal/writer/temp"
 require "file_marshal/writer/file"
+require "file_marshal/facade"

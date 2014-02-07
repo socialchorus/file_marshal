@@ -1,9 +1,6 @@
 require 'spec_helper'
 
 describe FileMarshal::Loader do
-  # Setting the mtime : http://stackoverflow.com/questions/8425689/how-can-i-set-a-file-creation-time-with-ruby-on-mac-os
-  # mtime is modified time, ctime is changed at time; mtime is what we want.  
-
   let(:file) { File.open(File.dirname(__FILE__) + '/support/commodore.jpg') }
   let(:attributes) { FileMarshal::Dumper.new(file).to_hash }
   let(:loader) { FileMarshal::Loader.new(attributes) }
