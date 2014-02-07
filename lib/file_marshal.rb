@@ -1,7 +1,9 @@
 require 'tempfile'
 require 'json'
+require 'time'
 
 require 'active_support/core_ext/module/delegation'
+require 'active_support/core_ext/hash'
 
 require "file_marshal/version"
 require "file_marshal/dumper"

@@ -25,7 +25,7 @@ module FileMarshal
     end
 
     def set_time
-      ::File.utime(file.atime, updated_at, file.path)
+      ::File.utime(file.atime, Time.parse(updated_at), file.path)
     end
 
     def prepare

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe FileMarshal::Loader do
   let(:file) { File.open(File.dirname(__FILE__) + '/support/commodore.jpg') }
-  let(:attributes) { FileMarshal::Dumper.new(file).to_hash }
+  let(:attributes) { JSON.parse(FileMarshal::Dumper.new(file).to_hash.to_json) }
   let(:loader) { FileMarshal::Loader.new(attributes) }
 
   describe '#tempfile' do

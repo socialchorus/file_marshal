@@ -3,6 +3,7 @@ module FileMarshal
     attr_reader :attributes, :file
 
     def initialize(opts)
+      opts.symbolize_keys!
       @attributes = FileAttributes.new(
         opts[:name], opts[:content], opts[:updated_at]
       )
